@@ -20,6 +20,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
 }
 
 nav ul li {
@@ -43,4 +44,21 @@ nav ul li a:hover {
 /* Estilos para el contenido */
 .container {
     margin-top: 50px; /* Ajuste para que el contenido no quede oculto debajo del menú */
+}
+
+/* Media Queries para hacer el menú responsivo */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
 }
