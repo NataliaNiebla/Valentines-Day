@@ -1,11 +1,11 @@
 @font-face {
     font-family: "Typewcow"; /* Nombre que usarás en el CSS */
-    src: url("/fonts/typewcond.otf") format("opentype");
+    src: url("typewcond.otf") format("opentype");
 }
 
 @font-face {
     font-family: "love";
-    src: url("/fonts/love.otf") format("opentype");
+    src: url("love.otf") format("opentype");
 }
 
 
