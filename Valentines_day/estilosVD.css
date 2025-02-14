@@ -1,0 +1,100 @@
+@font-face {
+    font-family: "Typewcow"; /* Nombre que usarás en el CSS */
+    src: url("/fonts/typewcond.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "love";
+    src: url("/fonts/love.otf") format("opentype");
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #171717;
+    flex-direction: column;
+}
+.container {
+    position: relative; /* Para que los elementos internos se posicionen relativos a este */
+    width: 500px; /* Ancho del contenedor */
+    height: 300px; /* Alto del contenedor */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */ 
+}
+.sobre {
+    position: absolute; /* Para que se posicione sobre el contenedor */
+    width: 100%; /* Para que ocupe todo el ancho del contenedor */
+    height: 100%; /* Para que ocupe todo el alto del contenedor */ 
+    background: #f6aed6;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Forma del sobre */
+    transition: transform 1s; /* Efecto de transición */
+    border-radius: 20px;
+}
+.tapa {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: #e67cbf;
+    top: 0;  /* Para que se posicione en la parte superior */
+    clip-path: polygon(0 0, 100% 0, 50% 100%); /* Forma de la tapa */
+    transition: transform 1s; /* Efecto de transición */
+    transform-origin: top;
+    border-radius: 20px;
+}
+
+
+.carta {
+    position: absolute; /* Para que se posicione sobre el contenedor */
+    width: 80vw; /* Ancho inicial */
+    height: auto; /* Alto inicial */
+    background: rgb(255, 255, 255); /* Color de fondo */
+    top: 100%; /* Para que se posicione en la parte inferior */
+    left: 50%; /* Para que se posicione en el centro */
+    padding: 0; /* Relleno */
+    box-shadow: 10px 10px 6px rgba(113, 106, 250, 0.852); /* Sombra */
+    border-radius: 20px; /* Redondear bordes */
+    transform: translate(-50%, -50%); 
+    opacity: 0; /* Opacidad inicial */
+    transition: all 2s; 
+    text-align: center; /* Alineación centrada */
+    font-size: 20px; /* Tamaño de fuente */
+    font-family: Typewcow; /* Fuente */
+    overflow: visible; /* Asegura que no se corte el contenido */
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Espacio entre elementos */
+}
+
+.carta h1 {
+    margin: auto;
+    padding: auto;
+    width: 100%;
+    text-align: center; /* Centrar el texto */
+    font-family: love; /* Fuente */
+    text-shadow: 2px 2px 4px #17171719;
+}
+
+.texto {
+    width: 60%;
+}
+
+.imagenes img {
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+
+
+.container.abierto .tapa {
+    transform: rotateX(180deg); /* Rotar la tapa | 180 grados */
+}
+.container.abierto .carta {
+    width: 1000px; /* Ancho de la carta */
+    height: auto; /* Alto de la carta */
+    padding: 25px;  /* Relleno */
+    opacity: 1; /* Opacidad */
+} 
